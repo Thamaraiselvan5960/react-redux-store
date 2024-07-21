@@ -1,12 +1,17 @@
 import apisauce from "apisauce";
+import axios from 'axios'
 import axiosRetry from "axios-retry";
 
 import { fetchMock } from "./mockData/mockData";
 
+
+
 const create = (baseURL = "") => {
+  const customAxiosInstance = axios.create({ baseURL: baseURL })
   const api = apisauce.create({
-    baseURL,
-    timeout: 30000
+    axiosInstance: customAxiosInstance,
+    // baseURL: baseURL,
+    timeout: 30000,
   });
 
   api.addRequestTransform((request) => {
