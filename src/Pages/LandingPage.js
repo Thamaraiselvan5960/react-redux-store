@@ -20,11 +20,13 @@ import LoginIcon from '@mui/icons-material/Login';
 import LogoutIcon from '@mui/icons-material/Logout';
 import LocationCityIcon from '@mui/icons-material/LocationCity';
 import MailIcon from '@mui/icons-material/Mail';
-import { Outlet } from 'react-router-dom';
+import { Link, useLocation, Outlet } from 'react-router-dom';
 
 const drawerWidth = 240;
 
 export const LandingPage = () => {
+	const location = useLocation();
+
 	return (
 		<Box sx={{ display: 'flex' }}>
 			<CssBaseline />
@@ -47,7 +49,14 @@ export const LandingPage = () => {
 				<Box sx={{ overflow: 'auto' }}>
 					<List>
 						<ListItem key={'Dashboard'} disablePadding>
-							<ListItemButton>
+							<ListItemButton
+								component={Link}
+								to="/"
+								sx={{
+									backgroundColor:
+										location.pathname === '/' ? '#f0f0f0' : 'transparent',
+								}}
+							>
 								<ListItemIcon>
 									<DashboardIcon />
 								</ListItemIcon>
@@ -55,7 +64,14 @@ export const LandingPage = () => {
 							</ListItemButton>
 						</ListItem>
 						<ListItem key={'Profile'} disablePadding>
-							<ListItemButton>
+							<ListItemButton
+								component={Link}
+								to="/profile"
+								sx={{
+									backgroundColor:
+										location.pathname === '/profile' ? '#f0f0f0' : 'transparent',
+								}}
+							>
 								<ListItemIcon>
 									<AccountBoxIcon />
 								</ListItemIcon>
@@ -63,7 +79,14 @@ export const LandingPage = () => {
 							</ListItemButton>
 						</ListItem>
 						<ListItem key={'Sites'} disablePadding>
-							<ListItemButton>
+							<ListItemButton
+								component={Link}
+								to="/sites"
+								sx={{
+									backgroundColor:
+										location.pathname === '/sites' ? '#f0f0f0' : 'transparent',
+								}}
+							>
 								<ListItemIcon>
 									<LocationCityIcon />
 								</ListItemIcon>
@@ -71,7 +94,14 @@ export const LandingPage = () => {
 							</ListItemButton>
 						</ListItem>
 						<ListItem key={'Settings'} disablePadding>
-							<ListItemButton>
+							<ListItemButton
+								component={Link}
+								to="/settings"
+								sx={{
+									backgroundColor:
+										location.pathname === '/settings' ? '#f0f0f0' : 'transparent',
+								}}
+							>
 								<ListItemIcon>
 									<SettingsIcon />
 								</ListItemIcon>
@@ -80,7 +110,14 @@ export const LandingPage = () => {
 						</ListItem>
 
 						<ListItem key={'Support'} disablePadding>
-							<ListItemButton>
+							<ListItemButton
+								component={Link}
+								to="/support"
+								sx={{
+									backgroundColor:
+										location.pathname === '/support' ? '#f0f0f0' : 'transparent',
+								}}
+							>
 								<ListItemIcon>
 									<SupportAgentIcon />
 								</ListItemIcon>
@@ -90,9 +127,18 @@ export const LandingPage = () => {
 
 					</List>
 					<Divider />
+					{/* Top menu ends here */}
+					{/* Bottom menu starts here */}
 					<List>
 						<ListItem key={'Login'} disablePadding>
-							<ListItemButton>
+							<ListItemButton
+								component={Link}
+								to="/login"
+								sx={{
+									backgroundColor:
+										location.pathname === '/login' ? '#f0f0f0' : 'transparent',
+								}}
+							>
 								<ListItemIcon>
 									<LoginIcon />
 								</ListItemIcon>
@@ -101,7 +147,14 @@ export const LandingPage = () => {
 						</ListItem>
 
 						<ListItem key={'Logout'} disablePadding>
-							<ListItemButton>
+							<ListItemButton
+								component={Link}
+								to="/logout"
+								sx={{
+									backgroundColor:
+										location.pathname === '/logout' ? '#f0f0f0' : 'transparent',
+								}}
+							>
 								<ListItemIcon>
 									<LogoutIcon />
 								</ListItemIcon>

@@ -30,3 +30,8 @@ ul,
 ol {
 	list-style: none;
 }
+
+svg {
+	color: rgb(32, 103, 255);
+	
+}
