@@ -34,7 +34,7 @@ export const StaticLayout = () => {
 	return (
 		<FlexLayout>
 			<FlexItem>
-				<FlexLayout>
+				<FlexLayout style={{ backgroundColor: '#fff' }}>
 					<div style={{ width: '30%' }}>
 						<h4>Bookings</h4>
 						<div>
@@ -55,7 +55,7 @@ export const StaticLayout = () => {
 				</div>
 			</FlexItem>
 			<FlexItem>
-				<FlexLayout>
+				<FlexLayout style={{ backgroundColor: '#fff' }}>
 					<div style={{ width: '30%' }}>
 						<h4>Queries Received</h4>
 						<div>
@@ -77,7 +77,7 @@ export const StaticLayout = () => {
 				</div>
 			</FlexItem>
 			<FlexItem>
-				<FlexLayout>
+				<FlexLayout style={{ backgroundColor: '#fff' }}>
 					<div style={{ width: '30%' }}>
 						<h4>Site visits</h4>
 						<div>
@@ -99,7 +99,7 @@ export const StaticLayout = () => {
 				</div>
 			</FlexItem>
 			<FlexItem>
-				<FlexLayout>
+				<FlexLayout style={{ backgroundColor: '#fff' }}>
 					<div style={{ width: '30%' }}>
 						<h4>New visitors</h4>
 						<div>
@@ -121,6 +121,6 @@ export const StaticLayout = () => {
 				</div>
 			</FlexItem>
 
-		</FlexLayout>
+		</FlexLayout >
 	);
 };

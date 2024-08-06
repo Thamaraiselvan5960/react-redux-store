@@ -10,19 +10,18 @@ import { Dashboard } from "../Pages/Dashboard";
 import { Profile } from "../Pages/Profile";
 import { Sites } from "../Pages/Sites";
 import { Settings } from "../Pages/Settings";
-
 import { ForgotPasswordPage, LoginPage, RegisterPage, ResetPasswordPage } from "../Pages/Authentication";
 import { AuthSelectors } from "../store/authentication";
 import { useSelector } from "react-redux";
 import { SiteDetails } from "../Pages/SiteDetails";
 
-import toast, { Toaster } from 'react-hot-toast';
+
+import { Toaster } from 'react-hot-toast';
 import { NewProfile } from "../Pages/NewProfile";
 import { Loans } from "../Pages/Loans";
 import { SiteListView } from "../Pages/SiteList";
 import { NewLoginPage } from "../Pages/Authentication/NewLoginPage";
 import { NewLoginFormPage } from "../Pages/Authentication/NewLoginFormPage";
-
 
 const toastConfig = {
 	position: 'top-right',

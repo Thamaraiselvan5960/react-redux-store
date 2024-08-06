@@ -31,7 +31,7 @@ export const AuthActions = Creators;
 // initialize state
 
 export const AUTH_INITIAL_STATE = Immutable({
-	token: 'lkjkh',
+	token: 'ksjh',
 	error: null,
 	message: null
 });
