@@ -6,6 +6,7 @@ import { resettableReducer } from "reduxsauce";
 
 import { mockFetchReducer } from "./mock_fetch";
 import { loadingReducer } from "./loading/loading_redux";
+import { authReducer } from "./authentication";
 
 const resettable = resettableReducer("RESET");
 
@@ -14,6 +15,7 @@ export const createRootReducer = (history) =>
     router: connectRouter(history),
 
     mockData: mockFetchReducer,
+    auth: authReducer,
     loadingIndicators: resettable(loadingReducer),
 
     watcher: actionWatchReducer

@@ -20,13 +20,24 @@ import LoginIcon from '@mui/icons-material/Login';
 import LogoutIcon from '@mui/icons-material/Logout';
 import LocationCityIcon from '@mui/icons-material/LocationCity';
 import MailIcon from '@mui/icons-material/Mail';
-import { Outlet } from 'react-router-dom';
+import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
+import { Link, useLocation, Outlet } from 'react-router-dom';
+
+import { styled } from 'styled-components';
 
 const drawerWidth = 240;
 
+const MainWrapper = styled.div`
+	background-color: #f4f9ff;
+	height: calc( 100% - 64px );
+	overflow-y: auto;
+`;
+
 export const LandingPage = () => {
+	const location = useLocation();
+
 	return (
-		<Box sx={{ display: 'flex' }}>
+		<Box sx={{ display: 'flex', height: '100%' }}>
 			<CssBaseline />
 			<AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
 				<Toolbar>
@@ -47,7 +58,14 @@ export const LandingPage = () => {
 				<Box sx={{ overflow: 'auto' }}>
 					<List>
 						<ListItem key={'Dashboard'} disablePadding>
-							<ListItemButton>
+							<ListItemButton
+								component={Link}
+								to="/"
+								sx={{
+									backgroundColor:
+										location.pathname === '/' ? '#f0f0f0' : 'transparent',
+								}}
+							>
 								<ListItemIcon>
 									<DashboardIcon />
 								</ListItemIcon>
@@ -55,7 +73,14 @@ export const LandingPage = () => {
 							</ListItemButton>
 						</ListItem>
 						<ListItem key={'Profile'} disablePadding>
-							<ListItemButton>
+							<ListItemButton
+								component={Link}
+								to="/profile"
+								sx={{
+									backgroundColor:
+										location.pathname === '/profile' ? '#f0f0f0' : 'transparent',
+								}}
+							>
 								<ListItemIcon>
 									<AccountBoxIcon />
 								</ListItemIcon>
@@ -63,7 +88,14 @@ export const LandingPage = () => {
 							</ListItemButton>
 						</ListItem>
 						<ListItem key={'Sites'} disablePadding>
-							<ListItemButton>
+							<ListItemButton
+								component={Link}
+								to="/sites"
+								sx={{
+									backgroundColor:
+										location.pathname === '/sites' ? '#f0f0f0' : 'transparent',
+								}}
+							>
 								<ListItemIcon>
 									<LocationCityIcon />
 								</ListItemIcon>
@@ -71,7 +103,14 @@ export const LandingPage = () => {
 							</ListItemButton>
 						</ListItem>
 						<ListItem key={'Settings'} disablePadding>
-							<ListItemButton>
+							<ListItemButton
+								component={Link}
+								to="/settings"
+								sx={{
+									backgroundColor:
+										location.pathname === '/settings' ? '#f0f0f0' : 'transparent',
+								}}
+							>
 								<ListItemIcon>
 									<SettingsIcon />
 								</ListItemIcon>
@@ -80,7 +119,14 @@ export const LandingPage = () => {
 						</ListItem>
 
 						<ListItem key={'Support'} disablePadding>
-							<ListItemButton>
+							<ListItemButton
+								component={Link}
+								to="/support"
+								sx={{
+									backgroundColor:
+										location.pathname === '/support' ? '#f0f0f0' : 'transparent',
+								}}
+							>
 								<ListItemIcon>
 									<SupportAgentIcon />
 								</ListItemIcon>
@@ -88,11 +134,36 @@ export const LandingPage = () => {
 							</ListItemButton>
 						</ListItem>
 
+						<ListItem key={'Loans'} disablePadding>
+							<ListItemButton
+								component={Link}
+								to="/loans"
+								sx={{
+									backgroundColor:
+										location.pathname === '/loans' ? '#f0f0f0' : 'transparent',
+								}}
+							>
+								<ListItemIcon>
+									<AccountBalanceWalletIcon />
+								</ListItemIcon>
+								<ListItemText primary={'Loans'} />
+							</ListItemButton>
+						</ListItem>
+
 					</List>
 					<Divider />
+					{/* Top menu ends here */}
+					{/* Bottom menu starts here */}
 					<List>
 						<ListItem key={'Login'} disablePadding>
-							<ListItemButton>
+							<ListItemButton
+								component={Link}
+								to="/login"
+								sx={{
+									backgroundColor:
+										location.pathname === '/login' ? '#f0f0f0' : 'transparent',
+								}}
+							>
 								<ListItemIcon>
 									<LoginIcon />
 								</ListItemIcon>
@@ -101,7 +172,14 @@ export const LandingPage = () => {
 						</ListItem>
 
 						<ListItem key={'Logout'} disablePadding>
-							<ListItemButton>
+							<ListItemButton
+								component={Link}
+								to="/logout"
+								sx={{
+									backgroundColor:
+										location.pathname === '/logout' ? '#f0f0f0' : 'transparent',
+								}}
+							>
 								<ListItemIcon>
 									<LogoutIcon />
 								</ListItemIcon>
@@ -111,36 +189,12 @@ export const LandingPage = () => {
 					</List>
 				</Box>
 			</Drawer>
-			<Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+			<Box component="main" sx={{ flexGrow: 1 }}>
 				<Toolbar />
-				<Typography paragraph>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
-					enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
-					imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus.
-					Convallis convallis tellus id interdum velit laoreet id donec ultrices.
-					Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-					adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra
-					nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum
-					leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis
-					feugiat vivamus at augue. At augue eget arcu dictum varius duis at
-					consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
-					sapien faucibus et molestie ac.
-				</Typography>
-				<Typography paragraph>
-					Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper
-					eget nulla facilisi etiam dignissim diam. Pulvinar elementum integer enim
-					neque volutpat ac tincidunt. Ornare suspendisse sed nisi lacus sed viverra
-					tellus. Purus sit amet volutpat consequat mauris. Elementum eu facilisis
-					sed odio morbi. Euismod lacinia at quis risus sed vulputate odio. Morbi
-					tincidunt ornare massa eget egestas purus viverra accumsan in. In hendrerit
-					gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem
-					et tortor. Habitant morbi tristique senectus et. Adipiscing elit duis
-					tristique sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
-					eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
-					posuere sollicitudin aliquam ultrices sagittis orci a.
-				</Typography>
-				<Outlet />
+				<MainWrapper>
+					<Outlet />
+				</MainWrapper>
+
 			</Box>
 		</Box>
 	);
